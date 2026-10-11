@@ -1,15 +1,15 @@
 
 # Hashcat Complete Reference 
-1. Introduction to Hashcat
+## 1. Introduction to Hashcat
 Hashcat is a popular password-recovery tool used to test how strong passwords are by trying different password combinations. It does not directly reverse a hash to reveal the original password. Instead, it creates possible passwords, converts each one into a hash using the same algorithm as the target, and compares the result with the original hash. If the hashes match, the password candidate is considered a match.
 
 The success and speed of Hashcat depend on several factors:
 
-Hash type: Different hashing algorithms take different amounts of time to process. For example, MD5 is generally fast, while bcrypt and Argon2 are designed to make password guessing slower.
+**Hash type:** Different hashing algorithms take different amounts of time to process. For example, MD5 is generally fast, while bcrypt and Argon2 are designed to make password guessing slower.
 
-Attack mode: Hashcat supports different methods of generating password guesses, such as trying words from a dictionary, testing every possible character combination, or modifying existing words.
+**Attack mode:** Hashcat supports different methods of generating password guesses, such as trying words from a dictionary, testing every possible character combination, or modifying existing words.
 
-Hardware: Hashcat can use CPUs and GPUs to perform password guesses. GPUs can process many suitable hash calculations in parallel, making them particularly effective for many common hash types. However, memory-intensive algorithms such as Argon2 and scrypt require significant memory resources, which can affect performance.
+**Hardware:** Hashcat can use CPUs and GPUs to perform password guesses. GPUs can process many suitable hash calculations in parallel, making them particularly effective for many common hash types. However, memory-intensive algorithms such as Argon2 and scrypt require significant memory resources, which can affect performance.
 
 ```bash
 hashcat [options]... hash|hashfile|hccapxfile [dictionary|mask|directory]...
